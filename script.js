@@ -19,9 +19,9 @@ function salvarTarefa() {
   // "Escrevendo" o html de um novo card na lista de tarefas
   // innerHTML é um método que define ou retorna o conteúdo HTML de um elemento.
   //Nesse caso colocamos o elemento <section> dentro da varialvel elementoLista e com esse método estamos alterando o conteúdo do elemento
-  elementoLista.innerHTML +=
   // o operador += é um operador de adição para númericos e de concatenação para strings
   // o elemento ` permite adicionar strings de várias linhas
+  elementoLista.innerHTML +=
   `
   <div class='card' id='item-${itemId}'>
     <p>${input.value}</p>
