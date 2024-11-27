@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tarefas</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <section class="principal">
+        <h1>Tarefas</h1>
+        <section id="lista">
+          <div class="card" id="item-1">
+            <p> Estudar HTML </p>
+            <button onclick='excluir("item-1")'>Excluir </button>
+          </div>
+           <div class="card" id="item-2">
+            <p> Estudar CSS </p>
+             <button onclick='excluir("item-2")'>Excluir </button>
+          </div>
+         </section>    
+        <div class="formulario">
+           <input type="text" id="nova-tarefa">
+          <button onclick='salvarTarefa()'> Adicionar</button>
+        </div>  
+      </section>  
+      
+
