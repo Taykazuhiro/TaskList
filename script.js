@@ -25,7 +25,7 @@ function salvarTarefa() {
   `
   <div class='card' id='item-${itemId}'>
     <p>${input.value}</p>
-    <button class="botao-concluir" onclick='concluir("item-${itemID}")'>Concluir</button>
+    <button class="botao-concluir" onclick='concluir("item-${itemId}")'>Concluir</button>
     <button class="botao-excluir" onclick='excluir("item-${itemId}")'>Excluir</button>
   </div>
   `
@@ -38,14 +38,27 @@ function salvarTarefa() {
   itemId++
 }
 
+function concluir(valor) {
+  let elementoConcluido = document.querySelector(`#${valor}`)
+  let tarefaTexto = elementoConcluido.querySelector('p').innerText;
+  elementoConcluido.remove()
+
+  let listaConcluidos = document.querySelector('#lista-concluidas')
+  listaConcluidos.innerHTML +=
+`
+<div class='card-concluidas' id='item-${valor}'>
+    <p>${tarefaTexto}</p>
+`
+
+}
 
 function excluir(valor) {
-//valor aqui funciona como uma variavel que vai receber o parâmetro ou é o ID valor?
+//valor aqui funciona como uma variavel que vai receber o parâmetro (numero do ID)
   // Selecionando o elemento a ser excluido
   let elemento = document.querySelector(`#${valor}`)
-  //estou usando interpolação para adicionar o # e chamar o ID da classe
+  //estou usando interpolação para adicionar o # e chamar o parâmetro
  
-  // Excluindo o elemento selecionado
+  // Excluindo o elemento selecionado pelo ID
   elemento.remove()
 }
 
